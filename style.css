@@ -1,0 +1,49 @@
+* {
+    background: rgb(133, 163, 174) ;
+    backface-visibility: hidden;
+}
+.head {
+    text-align: center;
+    font-size: 30px;
+    text-decoration: underline;
+    color: rgb(54, 71, 27);
+}
+.first {
+    padding: 0px;
+    border: 0px;
+    outline: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+h2 {
+    color: rgb(61, 15, 15);
+    font-size: 30px;
+}
+.content > p {
+    font-size: 20px;
+}
+.content > ol {
+    font-size: 20px;
+}
+.content > ul {
+    font-size: 20px;
+}
+.picture {
+    border: 0px;
+    outline: none 0px;
+}
+img {
+    width: 700px;
+    height: 500px;
+    margin-right: 50px;
+    margin-top: 30px;
+    outline: 0px;
+    border: 0px;
+}
+.butt {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    margin-top: 50px;
+}

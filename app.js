@@ -57,7 +57,7 @@ function playGame() {
         console.log(`Score: Human: ${humanScore}, Computer: ${computerScore}`);
     }
 
-    console.log("\n Final sore:");
+    console.log("\nFinal sore:");
     console.log(`Human: ${humanScore} | Computer: ${computerScore}`);
 
     if (humanScore > computerScore) {
