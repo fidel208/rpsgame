@@ -1,0 +1,86 @@
+body {
+    padding: 0;
+    margin: 0;;
+    background: lightblue;
+}
+h1 {
+    position: center;
+    text-align: center;
+}
+.game {
+    display: flex;
+}
+.explain {
+    width: 50%;
+    padding: 20px;
+    display: block;
+    align-items: center;
+}
+.explain > p {
+    font-size: 30px;
+}
+.explain > ul {
+    font-size: 30px;
+}
+.tools {
+    display: flex;
+}
+.start > p {
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding: 0;
+}
+.result {
+    margin-left: 100px;
+    margin-top: 30px;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+button {
+    width: 300px;
+    height: 50px;
+    font-size: 25px;
+    margin-bottom: 10px;
+    border: none;
+    box-shadow: 0 0 10px rgb(77, 70, 70);
+    border-radius: 12px;
+    margin-bottom: 50px;
+}
+button:hover {
+    background-color: rgb(66, 66, 241);
+    color: white;
+}
+.rock {
+    margin-right: 20px;
+}
+.paper {
+    margin-right: 20px;
+}
+.scissors {
+    margin-right: 20px;
+}
+.again {
+    margin-top: 10px;
+}
+.result {
+    font-size: 30px;
+}
+.again {
+    margin-left: 200px;
+    margin-top: 20px;
+}
+.again {
+    height: 60px;
+    width: 350px;
+}
+footer {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    background: rgb(32, 46, 59);
+    color: white;
+    font-size: 27px;
+}

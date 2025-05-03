@@ -1,72 +1,68 @@
-function getComputerChoice() {
+let humanScore = 0;
+let computerScore = 0;
+
+const resultDiv = document.getElementById("result");
+const scoreDiv = document.getElementById("score");
+const playAgainButton = document.getElementById("playAgain");
+playAgainButton.style.display = "none";
+
+function scoreUpdate() {
+    scoreDiv.textContent = `You: ${humanScore} | Computer: ${computerScore}`;
+}
+
+function playRound(humanChoice) {
+    resultDiv.textContent = "";
+    playAgainButton.style.display = "block";
+
     const choices  = ["rock", "paper", "scissors"];
-    return choices[Math.floor(Math.random() * choices.length)];
-}
+    const computerChoice = choices[Math.floor(Math.random() * choices.length)];
 
-function getHumanChoice() {
-    let choice;
-    choice = prompt("Enter either rock, paper or scissors:").toLowerCase();
-    if (["rock", "paper", "scissors"].includes(choice)) {
-        return choice;
+    const playerMessage = document.createElement('p');
+    playerMessage.textContent = `You: ${humanChoice}`;
+    resultDiv.appendChild(playerMessage);
+
+    const computerMessage = document.createElement('p');
+    computerMessage.textContent = `Computer: ${computerChoice}`;
+    resultDiv.appendChild(computerMessage);
+
+    const resultMessage = document.createElement('p');
+    if (humanChoice === computerChoice) {
+        resultMessage.textContent = `It's a tie. You both chose ${humanChoice}`;
     }
-    else {
-        console.log("Invalid choice!");
-        return getHumanChoice();
-    }
-}
-
-
-
-function playRound(humanChoice, computerChoice) {
-    console.log(`You chose: ${humanChoice}`);
-    console.log(`Computer chose: ${computerChoice}`);
-    if(humanChoice === computerChoice) {
-        console.log(`It's a tie. You both chose ${humanChoice}`);
-        return "tie";
-    }
-    else if(
+    else if (
         (humanChoice === "rock" && computerChoice === "scissors") ||
         (humanChoice === "paper" && computerChoice === "rock") ||
         (humanChoice === "scissors" && computerChoice === "paper")
     ) {
-        console.log(`You win: ${humanChoice} beats ${computerChoice}`);
-        return "human";
+        resultMessage.textContent = `You win: ${humanChoice} beats ${computerChoice}`;
+        humanScore++;
     }
     else {
-        console.log(`You loose: ${computerChoice} beats ${humanChoice}`);
-        return "computer";
+        resultMessage.textContent = `You loose: ${computerChoice} beats ${humanChoice}`;
+        computerScore++;
+    }
+    resultDiv.appendChild(resultMessage);
+    scoreUpdate();
+
+    if (humanScore === 5 || computerScore === 5) {
+        const finalMessage = document.createElement('p');
+        finalMessage.textContent = humanScore > computerScore ? "You won the game." : "Computer won, You lost.";
+        resultDiv.appendChild(finalMessage);
+        toggleButtons(false);
     }
 }
 
-function playGame() {
-    let humanScore = 0;
-    let computerScore = 0;
-
-    for(let i = 0; i<5; i++) {
-        console.log(`\nRound ${i + 1}`);
-        let humanChoice = getHumanChoice();
-        let computerChoice = getComputerChoice();
-        let result = playRound(humanChoice, computerChoice);
-
-        if(result === "human") {
-            humanScore++;
-        }
-        else if(result === "computer") {
-            computerScore++;
-        }
-        console.log(`Score: Human: ${humanScore}, Computer: ${computerScore}`);
-    }
-
-    console.log("\nFinal sore:");
-    console.log(`Human: ${humanScore} | Computer: ${computerScore}`);
-
-    if (humanScore > computerScore) {
-        console.log("Congratulations! You won the game!");
-    } else if (humanScore < computerScore) {
-        console.log("Game over! The computer wins!");
-    } else {
-        console.log("It's a tie game!");
-    }
+function toggleButtons(enable) {
+    document.getElementById("rock").disabled = !enable;
+    document.getElementById("paper").disabled = !enable;
+    document.getElementById("scissors").disabled = !enable;
 }
 
-playGame();
+function resetGame() {
+    humanScore = 0;
+    computerScore = 0;
+    resultDiv.textContent = "";
+    scoreUpdate();
+    toggleButtons(true);
+    playAgainButton.style.display = "none";
+}
