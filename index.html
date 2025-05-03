@@ -1,55 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Rock Paper scissors</title>
-      <link rel="stylesheet" href="style.css">
- </head>
- <body>
-     <div class="container">
-     <h1>ROCK PAPER SCISSORS</h1>
-     <div class="game">
-         <div class="explain">
-             <p>Hello. <br> Ever heard of rock, paper, scissors? Here is an an explanation about it. <br> Rock, paper, scissors is a simple game usually played between two people. <br> It's often used as a quick decision making method and also for fun. Each <br>player simply forms one of the three shapes with their hand:</p>
-             <ul>
-                 <li>Rock</li>
-                 <li>Paper</li>
-                 <li>Scissors</li>
-             </ul>
-             <img src="Rock-paper-scissors.png" alt="gamelogo">
-             <p>The outcome is determined by the following rule:</p>
-             <ul>
-                 <li>Rock crushes scissors</li>
-                 <li>Scissors cut paper</li>
-                 <li>Paper covers rock</li>
-                 <li>If both choose the same object, then it's a tie</li>
-             </ul>
-             <p>Here, you'll play against the computer.</p>
-         </div>
-         <div class="gameplay">
-             <h2>GAME</h2>
-             <div class="tools">
-                 <div class="start">
-                     <p>Choose one:</p>
-                     <div class="buttons">
-                         <button class="rock" id="rock" onclick="playRound('rock')">rock</button>
-                         <button class="paper" id="paper" onclick="playRound('paper')">paper</button>
-                         <button class="scissors" id="scissors" onclick="playRound('scissors')">scissors</button>
-                     </div>
-                 </div>
-                 <div class="result">
-                     <div id="result"></div>
-                     <div id="score"></div>
-                 </div>
-             </div>
-             <button class="again" id="playAgain" onclick="resetGame()">Play again</button>
-         </div>
-     </div>
-     <script src="app.js"></script>
-     <footer>
-         <p>&copy;Fidempa, Finetech limited</p>
-     </footer>
- </body>
- </html>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper scissors</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>ROCK PAPER SCISSORS</h1>
+    <div class="game">
+        <div class="explain">
+            <p>Hello. <br> Ever heard of rock, paper, scissors? Here is an an explanation about it. <br> Rock, paper, scissors is a simple game usually played between two people. <br> It's often used as a quick decision making method and also for fun. Each <br>player simply forms one of the three shapes with their hand:</p>
+            <ul>
+                <li>Rock</li>
+                <li>Paper</li>
+                <li>Scissors</li>
+            </ul>
+            <img src="Rock-paper-scissors.png" alt="gamelogo">
+            <p>The outcome is determined by the following rule:</p>
+            <ul>
+                <li>Rock crushes scissors</li>
+                <li>Scissors cut paper</li>
+                <li>Paper covers rock</li>
+                <li>If both choose the same object, then it's a tie</li>
+            </ul>
+            <p>Here, you'll play against the computer.</p>
+        </div>
+        <div class="gameplay">
+            <h2>GAME</h2>
+            <div class="tools">
+                <div class="start">
+                    <p>Choose one:</p>
+                    <div class="buttons">
+                        <button class="rock" id="rock" onclick="playRound('rock')">rock</button>
+                        <button class="paper" id="paper" onclick="playRound('paper')">paper</button>
+                        <button class="scissors" id="scissors" onclick="playRound('scissors')">scissors</button>
+                    </div>
+                </div>
+                <div class="result">
+                    <div id="result"></div>
+                    <div id="score"></div>
+                </div>
+            </div>
+            <button class="again" id="playAgain" onclick="resetGame()">Play again</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <footer>
+        <p>&copy;Fidempa, Finetech limited</p>
+    </footer>
+</body>
+</html>
